@@ -1,0 +1,32 @@
+$page-width:        1000px;
+
+.o-container {
+    max-width: $page-width;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.o-container:after,
+.o-layout:after {
+      content: "";
+      display: table;
+      clear: both;
+  }
+
+  .o-layout
+  {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    margin-left: ($grid-gutter * -1);
+  }
+
+  .o-layout_item
+  {
+    display: inline-block;
+    vertical-align: top;
+    box-sizing: border-box;
+    padding-left: $grid-gutter;
+    margin-right: -4px;
+    width:100%
+  }

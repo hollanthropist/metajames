@@ -1,0 +1,293 @@
+/*------------------------------------*\
+    #SPACING
+\*------------------------------------*/
+
+/**
+ * Margin and padding helper classes. Use these to tweak layout on a micro
+ * level.
+ *
+ * `.(m|p)(t|r|b|l|h|v)(-|+|0) {}` = margin/padding top/right/bottom/left/horizontal/vertical less/more/none
+ */
+
+// Predefine the variables below in order to alter and enable specific features.
+$margin:                          $base-spacing-unit !default;
+$margin--small:                   $base-spacing-unit--small !default;
+$margin--tiny:                    $base-spacing-unit--tiny !default;
+$margin--teeny:                   $base-spacing-unit--teeny !default;
+$margin--large:                   $base-spacing-unit--large !default;
+$margin--huge:                    $base-spacing-unit--huge !default;
+$margin--massive:                 $base-spacing-unit--massive !default;
+
+$padding:                         $base-spacing-unit !default;
+$padding--small:                  $base-spacing-unit--small !default;
+$padding--tiny:                   $base-spacing-unit--tiny !default;
+$padding--teeny:                  $base-spacing-unit--teeny !default;
+$padding--large:                  $base-spacing-unit--large !default;
+$padding--huge:                   $base-spacing-unit--huge !default;
+$padding--massive:                $base-spacing-unit--massive !default;
+
+$enable-margins:                  true !default;
+$enable-margins--teeny:           true !default;
+$enable-margins--tiny:            true !default;
+$enable-margins--small:           true !default;
+$enable-margins--large:           true !default;
+$enable-margins--huge:            true !default;
+$enable-margins--massive:         true !default;
+
+$enable-margins--negative:        true !default;
+$enable-margins--negative-tiny:   true !default;
+$enable-margins--negative-small:  true !default;
+$enable-margins--negative-large:  true !default;
+$enable-margins--negative-huge:   true !default;
+
+$enable-margins--none:            true !default;
+
+$enable-paddings:                 true !default;
+$enable-paddings--teeny:          true !default;
+$enable-paddings--tiny:           true !default;
+$enable-paddings--small:          true !default;
+$enable-paddings--large:          true !default;
+$enable-paddings--huge:           true !default;
+$enable-paddings--massive:        true !default;
+
+$enable-paddings--none:           true !default;
+
+
+
+
+
+@if ($enable-margins == true) {
+
+    /**
+     * Margin helper classes.
+     *
+     * Add margins.
+     */
+
+    @include spacing(margin, $margin);
+
+}
+
+
+@if ($enable-margins--teeny == true) {
+
+    /**
+     * Add teeny margins.
+     */
+
+    @include spacing(margin, $margin--teeny, teeny);
+
+}
+
+
+@if ($enable-margins--tiny == true) {
+
+    /**
+     * Add tiny margins.
+     */
+
+    @include spacing(margin, $margin--tiny, tiny);
+
+}
+
+
+@if ($enable-margins--small == true) {
+
+    /**
+     * Add small margins.
+     */
+
+    @include spacing(margin, $margin--small, small);
+
+}
+
+
+@if ($enable-margins--large == true) {
+
+    /**
+     * Add large margins.
+     */
+
+    @include spacing(margin, $margin--large, large);
+
+}
+
+
+@if ($enable-margins--huge == true) {
+
+    /**
+     * Add huge margins.
+     */
+
+    @include spacing(margin, $margin--huge, huge);
+
+}
+
+@if ($enable-margins--massive == true) {
+
+    /**
+     * Add massive margins.
+     */
+
+    @include spacing(margin, $margin--massive, massive);
+
+}
+
+
+@if ($enable-margins--none == true) {
+
+    /**
+     * Remove margins.
+     */
+
+    @include spacing(margin, 0, none);
+
+}
+
+
+@if ($enable-margins--negative == true) {
+
+    /**
+     * Negative margins.
+     */
+
+    @include spacing(margin, -$margin);
+
+}
+
+
+@if ($enable-margins--negative-tiny == true) {
+
+    /**
+     * Tiny negative margins.
+     */
+
+    @include spacing(margin, -$margin--tiny, tiny);
+
+}
+
+
+@if ($enable-margins--negative-small == true) {
+
+    /**
+     * Small negative margins.
+     */
+
+    @include spacing(margin, -$margin--small, small);
+
+}
+
+
+@if ($enable-margins--negative-large == true) {
+
+    /**
+     * Large negative margins.
+     */
+
+    @include spacing(margin, -$margin--large, large);
+
+}
+
+
+@if ($enable-margins--negative-huge == true) {
+
+    /**
+     * Huge negative margins.
+     */
+
+    @include spacing(margin, -$margin--huge, huge);
+
+}
+
+
+
+
+
+@if ($enable-paddings == true) {
+
+    /**
+     * Padding helper classes.
+     *
+     * Add paddings.
+     */
+
+    @include spacing(padding, $padding);
+
+}
+
+
+@if ($enable-paddings--teeny == true) {
+
+    /**
+     * Add teeny paddings.
+     */
+
+    @include spacing(padding, $padding--teeny, teeny);
+
+}
+
+
+@if ($enable-paddings--tiny == true) {
+
+    /**
+     * Add tiny paddings.
+     */
+
+    @include spacing(padding, $padding--tiny, tiny);
+
+}
+
+
+@if ($enable-paddings--small == true) {
+
+    /**
+     * Add small paddings.
+     */
+
+    @include spacing(padding, $padding--small, small);
+
+}
+
+
+@if ($enable-paddings--large == true) {
+
+    /**
+     * Add large paddings.
+     */
+
+    @include spacing(padding, $padding--large, large);
+
+}
+
+
+@if ($enable-paddings--huge == true) {
+
+    /**
+     * Add huge paddings.
+     */
+
+    @include spacing(padding, $padding--huge, huge);
+
+}
+
+
+@if ($enable-paddings--massive == true) {
+
+    /**
+     * Add massive paddings.
+     */
+
+    @include spacing(padding, $padding--massive, massive);
+
+}
+
+
+@if ($enable-paddings--none == true) {
+
+    /**
+     * Remove paddings.
+     */
+
+    @include spacing(padding, 0, none);
+
+}

@@ -1,0 +1,47 @@
+// grid breakpoints (nested maps)
+$grid-breakpoints: (
+  sm: (
+    media: "all",
+    query: "(min-width: 480px)",
+  ),
+  md: (
+    media: "all",
+    query: "(min-width: 768px)",
+  ),
+  lg: (
+    media: "all",
+    query: "(min-width: 960px)",
+  )
+) !default;
+
+// create base grid classes
+@for $i from 1 through $grid-units
+{
+  .u-#{$i}#{$breakpoint-divider}#{$grid-units}
+  {
+    width: percentage( $i / $grid-units );
+  }
+}
+
+// create media queries and namespaced grid classes for each breakpoints
+@each $name, $values in $grid-breakpoints
+{
+  // get values from nested maps
+  $mq-name: $name;
+  $mq-media: map-get($values, media);
+  $mq-query: map-get($values, query);
+
+  // write a media query for each breakpoint
+  @media #{$mq-media} and #{$mq-query}
+  {
+    // loop from 1 to x grid units
+    @for $i from 1 through $grid-units
+    {
+      // write namespaced grid classes in each media query
+      .u-#{$i}#{$breakpoint-divider}#{$grid-units}#{$breakpoint-spacer}#{$mq-name}
+      {
+        width: percentage( $i / $grid-units );
+      }
+    }
+  }
+}

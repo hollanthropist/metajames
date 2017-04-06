@@ -1,0 +1,22 @@
+.c-footer {
+    background-color: $brand-light-blue;
+    text-align: center;
+    padding: $base-spacing-unit--massive 0;
+
+    h2 {
+        color: $brand-white;
+        font-weight: bolder;
+        margin-bottom: $base-spacing-unit--large;
+    }
+
+    p {
+        color: $brand-white;
+    }
+}
+
+.c-footer_rule {
+    width: 100%;
+    border-style: solid;
+    border-color: $brand-white;
+    margin: $base-spacing-unit auto;
+}

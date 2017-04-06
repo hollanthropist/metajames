@@ -1,0 +1,71 @@
+.c-circle-row {
+    margin: $base-spacing-unit auto;
+    display: block;
+
+    h2 {
+        color: $brand-light-blue;
+        font-size: 2.0em;
+        display: block;
+        text-align: center;
+        margin-bottom: $base-spacing-unit--large
+    }
+}
+
+.c-circle-row_row {
+
+    @include breakpoint(lg) {
+        display: table-row;
+    }
+}
+
+.c-circle-row_col {
+    display: block;
+    margin: 0 auto $base-spacing-unit--large auto;
+
+
+    h3 {
+        color: $brand-light-blue;
+        font-size: 2.0em;
+    }
+
+    &.center {
+        text-align: center;
+    }
+
+    &.left,
+    &.right { width: 70%; }
+
+    @include breakpoint(md){
+        &.left,
+        &.right { width: 50%; }
+    }
+
+    @include breakpoint(lg) {
+        display:table-cell;
+
+        &.left,
+        &.right {
+            width: 30%;
+            vertical-align: top;
+         }
+
+        &.center {
+            width:40%;
+            vertical-align: middle;
+        }
+
+        &.left {
+            text-align: right;
+        }
+
+        &.right {
+            text-align: left;
+        }
+    }
+}
+
+.c-cirlce-row_img {
+    width: 300px;
+    height: 300px;
+    border-radius: 100%;
+}

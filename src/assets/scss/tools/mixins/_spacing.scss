@@ -1,0 +1,72 @@
+///*------------------------------------*\
+//    #SPACING
+//\*------------------------------------*/
+
+// A mixin to spit out our spacing classes
+//
+// @include spacing(margin, 12px, small);
+
+// specify the class suffix's for the various sizes
+$sizes: (
+    none:       0,
+    teeny:      '---',
+    tiny:       '--',
+    small:      '-',
+    large:      \+,
+    huge:       \+\+,
+    massive:    \+\+\+
+) !default;
+
+// specify the sides we want to output
+$sides: (
+    none,
+    top,
+    right,
+    bottom,
+    left,
+    horizontal,
+    vertical
+) !default;
+
+
+@mixin spacing($spacing-property, $spacing-unit-size, $spacing-size: null, $spacing-breakpoint: null) {
+
+    // get the first letter of the spacing property
+    $prefix: str-slice($spacing-property, 0, 1);
+
+    // if a negative value is passed then prefix a `-`
+    @if ($spacing-unit-size < 0) {
+        $prefix: -$prefix;
+    }
+
+    // remove the breakpoint spacer if no breakpoint has been specified
+    $breakpoint-spacer: if($spacing-breakpoint == null, '', $breakpoint-spacer);
+
+    // get the shorthand size class suffix
+    $suffix: if($spacing-size == null, '', map-get($sizes, $spacing-size));
+
+    // loop through the sides we want to generate
+    @each $side in $sides {
+
+        $side-short: if($side == none, '', str-slice($side, 0, 1));
+
+        // build the class name
+        .u-#{$prefix}#{$side-short}#{$suffix}#{$breakpoint-spacer}#{$spacing-breakpoint} {
+
+            @if ($side == horizontal) {
+                #{$spacing-property}-right: $spacing-unit-size !important;
+                #{$spacing-property}-left: $spacing-unit-size !important;
+            } @elseif ($side == vertical) {
+                #{$spacing-property}-top: $spacing-unit-size !important;
+                #{$spacing-property}-bottom: $spacing-unit-size !important;
+            } @elseif ($side == none) {
+                #{$spacing-property}: $spacing-unit-size !important;
+            } @else {
+                #{$spacing-property}-#{$side}: $spacing-unit-size !important;
+            }
+
+        }
+
+    }
+
+}

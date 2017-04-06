@@ -1,0 +1,13 @@
+$color-names: brand-light-blue brand-orange brand-dark-grey brand-light-grey brand-white;
+$color-var: $brand-light-blue $brand-orange $brand-dark-grey $brand-light-grey $brand-white;
+
+@each $name in $color-names {
+  $i: index($color-names, $name);
+  .u-bg-#{$name} {
+    background-color: nth($color-var, $i);
+  }
+
+  .u-text-#{$name} {
+    color: nth($color-var, $i);
+  }
+}

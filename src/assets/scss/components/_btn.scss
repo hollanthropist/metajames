@@ -1,0 +1,16 @@
+/******************************
+<a class="c-btn" href="#">GET STARTED</a>
+*******************************/
+
+
+
+
+.c-btn {
+    display: inline-block;
+    text-decoration: none;
+    color: #FFF;
+    background-color: $brand-orange;
+    padding: $base-spacing-unit--small $base-spacing-unit--large;
+    border-radius: 6px;
+    // margin: $base-spacing-unit--large;
+}

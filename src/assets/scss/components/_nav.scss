@@ -1,0 +1,84 @@
+.c-navbar {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: $base-spacing-unit--teeny;
+    background-color: $brand-white;
+    position: relative;
+}
+
+.navigation {
+  max-width: none;
+  padding: 0;
+  position: absolute;
+  @include breakpoint(md) {
+      position: relative;
+  }
+}
+
+.c-navbar_logo {
+    display: inline-block;
+    a {
+        text-decoration: none;
+    }
+}
+
+.c-navbar_nav {
+    float: right;
+}
+
+.navigation li {
+  float: left;
+  border-bottom: 1px solid $brand-light-grey;
+  outline: 0;
+  &:first-child {
+      border-bottom: 0;
+  }
+
+  @include breakpoint(md) {
+      border-bottom: 0;
+  }
+}
+
+.navigation li a {
+  display: block;
+  color: $brand-dark-grey;
+  padding: 10px;
+  text-decoration: none;
+  font-weight: normal;
+
+}
+
+.navigation li a:hover {
+  background: $brand-light-grey;
+}
+
+.navheader {
+  font-size: 12px;
+}
+
+.slide-trigger {
+  display: none; /* need this */
+  padding: $base-spacing-unit--teeny;
+  cursor: pointer;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.slide-trigger span {
+  background-image: url("assets/img/dropdown-arrows.png");
+  background-position: 0 -14px;
+  display: block;
+  float: right;
+  margin-top: 3px;
+  height: 14px;
+  width: 32px;
+}
+
+@media only screen and (max-width: 768px) {
+  .slide-trigger { display: inline-block; }
+    .no-js .slide-trigger { display: none; }
+  .navigation { display: none; }
+    .no-js .navigation { display: block; }
+  .navigation li { float: none; }
+  .navigation li a { border-bottom: 1px solid #fff; }
+}
