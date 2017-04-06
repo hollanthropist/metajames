@@ -1,13 +1,13 @@
 *, html, body {
-    font-family: 'Lato', sans-serif !important;
+    font-family: 'Pavanam', sans-serif !important;
 }
 
 h1, h2, h3, h4, p {
-    color: $brand-dark-grey;
+    color: $brand-light-grey;
 }
 
 a {
-    color: $brand-orange;
+    color: inherit;
     font-weight: inherit;
     display: inline-block;
 

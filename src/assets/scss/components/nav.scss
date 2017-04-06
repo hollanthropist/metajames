@@ -1,0 +1,34 @@
+.c-navbar {
+    display: block;
+
+    @include breakpoint(md) {
+        margin-top: 100px;
+    }
+}
+
+.c-navbar_logo {
+    display: inline-block;
+
+    a {
+        &:hover {
+            text-decoration: none;
+        }
+    }
+
+}
+
+.c-navbar_nav {
+
+    color: $brand-light-grey;
+    ul {
+        list-style: none;
+    }
+    li {
+        display: inline-block;
+    }
+
+    @include breakpoint(md) {
+        float: right;
+    }
+
+}
