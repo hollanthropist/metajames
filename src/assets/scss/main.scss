@@ -15,10 +15,12 @@
 
 // components
 @import 'components/nav',
-        'components/hero';
+        'components/hero',
+        'components/footer';
 
 // utility
 @import 'utility/grid',
         'utility/spacing',
         'utility/colours',
-        'utility/type';
+        'utility/type',
+        'utility/position';
