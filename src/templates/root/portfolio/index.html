@@ -1,55 +1,17 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>James Hollands | Front-end web developer</title>
-    <meta charset="utf-8">
-    <meta name="description" content="test site">
-    <meta name="author" content="James Hollands">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css?family=Pavanam" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/main.css">
-  </head>
-<body>
+<{% extends "./layouts/layout.html" %}
+
+{% block content %}
+
+    {% include "partials/header.html" %}
 
     <div class="o-container">
-        <div class="c-navbar">
-            <div class="c-navbar_logo">
-                <h1 class="u-text-brand-white"><a href="#">metajames <span class="u-text-brand-light-grey">web dev</span></a></h1>
-            </div>
-            <nav class="c-navbar_nav">
-              <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="skills-and-work-history.html">Skills and work history</a></li>
-                <li><a href="portfolio.html">Portfolio</a></li>
-              </ul>
-            </nav>
-        </div>
-    </div>
-
-    <div class="o-container">
-        <div class="c-hero" style="background-image: url(assets/img/hero-office.jpeg);">
+        <div class="c-hero" style="background-image: url('assets/img/james-holiday.jpg'); background-position: center center;">
             <div class="c-hero_inner" >
 
             </div>
         </div>
     </div>
 
+    {% include "partials/footer.html" %}
 
-    <footer class="c-footer">
-        <div class="o-container">
-              <ul class="c-footer_list">
-                  <li><a href="tel:+447522034391">07522034391</a></li>
-                  <li><a href="mailto:james.hollands0190@gmail.com">james.hollands0190@gmail.com</a></li>
-                  <li><a href="https://twitter.com/hollanthropist" target="_blank">@hollanthropist</a></li>
-              </ul>
-          <p class="u-in-bl u-text-right">©2017 James Hollands</p>
-        </div>
-    </footer>
-
-
-      <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
-      <script src="assets/js/script.js"> </script>
-
-  </body>
-</html>
+{% endblock %}

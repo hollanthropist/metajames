@@ -73,13 +73,13 @@ gulp.task('copy-images', function() {
 
 gulp.task('nunjucks', function() {
   // Gets .html and .nunjucks files in pages
-  return gulp.src('src/templates/root**/*.html')
+  return gulp.src('src/templates/root/**/*.html')
   // Renders template with nunjucks
   .pipe(nunjucksRender({
-      path: ['src/templates/partials']
+      path: ['src/templates']
     }))
   // output files in app folder
   .pipe(gulp.dest('dist'))
 });
 
-gulp.task('default', ['copy-images', 'files', 'nunjucks', 'html', 'js', 'sass', 'connect', 'watch']);
+gulp.task('default', ['nunjucks', 'copy-images', 'files', 'js', 'sass', 'connect', 'watch']);
