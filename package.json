@@ -6,6 +6,7 @@
     "gulp-connect": "latest",
     "gulp-imagemin": "^3.1.1",
     "gulp-livereload": "^3.8.1",
+    "gulp-nunjucks-render": "^2.2.1",
     "gulp-sass": "latest",
     "gulp-uglify": "latest",
     "gulp-util": "latest"

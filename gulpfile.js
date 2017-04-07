@@ -2,6 +2,7 @@ var gulp = require('gulp');
 var gutil = require('gulp-util');
 var sass = require('gulp-sass');
 const imagemin = require('gulp-imagemin');
+var nunjucksRender = require('gulp-nunjucks-render');
 
 var uglify = require('gulp-uglify'),
     concat = require('gulp-concat');
@@ -54,7 +55,7 @@ gulp.task('connect', function() {
 });
 
 gulp.task('html', function() {
-  gulp.src('./src/templates/root/**/*.html')
+  gulp.src('./src/templates/**/*.html')
   .pipe(gulp.dest('./dist'))
   .pipe(connect.reload());
 });
@@ -70,4 +71,15 @@ gulp.task('copy-images', function() {
   .pipe(gulp.dest('./dist/assets/img'))
 });
 
-gulp.task('default', ['copy-images', 'files', 'html', 'js', 'sass', 'connect', 'watch']);
+gulp.task('nunjucks', function() {
+  // Gets .html and .nunjucks files in pages
+  return gulp.src('src/templates/root**/*.html')
+  // Renders template with nunjucks
+  .pipe(nunjucksRender({
+      path: ['src/templates/partials']
+    }))
+  // output files in app folder
+  .pipe(gulp.dest('dist'))
+});
+
+gulp.task('default', ['copy-images', 'files', 'nunjucks', 'html', 'js', 'sass', 'connect', 'watch']);
