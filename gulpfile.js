@@ -44,7 +44,7 @@ gulp.task('js', function() {
 gulp.task('watch', function() {
     gulp.watch('./src/assets/js/**/*.js', ['js']);
     gulp.watch('./src/assets/scss/**/*.scss', ['sass']);
-    gulp.watch('./src/templates/**/*.html', ['html']);
+    gulp.watch('./src/templates/**/*.html', ['nunjucks']);
 });
 
 gulp.task('connect', function() {
