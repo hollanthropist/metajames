@@ -1,7 +1,16 @@
 .c-footer {
     padding-top: 10px;
     color: $brand-light-grey;
+    text-align: left;
 
+    right {
+        p {
+            @include breakpoint (md) {
+                text-align: right;
+            }
+        }
+
+    }
 }
 
 .c-footer_list {
