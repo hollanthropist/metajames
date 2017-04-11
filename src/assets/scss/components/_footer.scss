@@ -1,10 +1,11 @@
 .c-footer {
-    padding-top: 10px;
+    padding-top: 20px;
     color: $brand-light-grey;
     text-align: left;
 
-    right {
+    .right {
         p {
+            text-align: left;
             @include breakpoint (md) {
                 text-align: right;
             }
