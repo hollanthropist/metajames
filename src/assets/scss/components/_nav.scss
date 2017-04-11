@@ -35,14 +35,15 @@
     li {
         display: inline-block;
         padding: 10px 15px 10px 0;
+        font-size: 1.2em;
 
-        @include breakpoint (md) {
+        @include breakpoint (lg) {
             padding: 20px 0 0 10px;
         }
 
     }
 
-    @include breakpoint(md) {
+    @include breakpoint(lg) {
         text-align: right;
     }
 
