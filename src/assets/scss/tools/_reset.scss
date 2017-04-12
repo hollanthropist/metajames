@@ -32,7 +32,10 @@ footer, header, hgroup, menu, nav, section {
 body {
 }
 ol, ul {
-	list-style: none;
+	margin-left:20px;
+}
+li {
+	line-height: 1.5em;
 }
 blockquote, q {
 	quotes: none;
