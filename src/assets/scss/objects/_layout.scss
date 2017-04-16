@@ -19,6 +19,14 @@ $page-width:        1000px;
     margin: 0;
     padding: 0;
     margin-left: ($grid-gutter * -1);
+
+    &.no-gutter {
+        margin-left: 0;
+
+        .o-layout_item {
+            padding-left: 0;
+        }
+    }
   }
 
   .o-layout_item
