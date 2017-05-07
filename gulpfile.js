@@ -37,7 +37,7 @@ gulp.task('sass', ['clean'], function() {
 
 gulp.task('sass-prod', ['clean'], function() {
   gulp.src('./src/assets/scss/main.scss')
-  .pipe(sass({style: 'compressed'}))
+  .pipe(sass({outputStyle: 'compressed'}))
     .on('error', gutil.log)
   .pipe(gulp.dest('./dist/assets/css'))
   .pipe(connect.reload());
