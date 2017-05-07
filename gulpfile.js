@@ -11,12 +11,14 @@ var connect = require('gulp-connect');
 
 var livereload = require('gulp-livereload');
 
-gulp.task('copy', function() {
-  gulp.src('./src/templates/root/index.html')
-  .pipe(gulp.dest('./dist'))
+var clean = require('gulp-clean');
+
+gulp.task('clean', function () {
+    return gulp.src('dist', {read: false})
+        .pipe(clean());
 });
 
-gulp.task('files', function() {
+gulp.task('files', ['clean'], function() {
   gulp.src('./src/assets/files/*')
   .pipe(gulp.dest('./dist/assets/files'))
 });
@@ -25,7 +27,7 @@ gulp.task('log', function() {
   gutil.log('Hello')
 });
 
-gulp.task('sass', function() {
+gulp.task('sass', ['clean'], function() {
   gulp.src('./src/assets/scss/main.scss')
   .pipe(sass({style: 'expanded'}))
     .on('error', gutil.log)
@@ -33,7 +35,15 @@ gulp.task('sass', function() {
   .pipe(connect.reload());
 });
 
-gulp.task('js', function() {
+gulp.task('sass-prod', ['clean'], function() {
+  gulp.src('./src/assets/scss/main.scss')
+  .pipe(sass({style: 'compressed'}))
+    .on('error', gutil.log)
+  .pipe(gulp.dest('./dist/assets/css'))
+  .pipe(connect.reload());
+});
+
+gulp.task('js', ['clean'], function() {
   gulp.src('./src/assets/js/**/*.js')
   .pipe(uglify())
   .pipe(concat('script.js'))
@@ -54,24 +64,24 @@ gulp.task('connect', function() {
   })
 });
 
-gulp.task('html', function() {
+gulp.task('html', ['clean'], function() {
   gulp.src('./src/templates/**/*.html')
   .pipe(gulp.dest('./dist'))
   .pipe(connect.reload());
 });
 
-gulp.task('images', () =>
+gulp.task('images', ['clean'], () =>
     gulp.src('src/assets/img/*')
         .pipe(imagemin())
         .pipe(gulp.dest('dist/assets/img'))
 );
 
-gulp.task('copy-images', function() {
+gulp.task('copy-images', ['clean'], function() {
   gulp.src('./src/assets/img/*')
   .pipe(gulp.dest('./dist/assets/img'))
 });
 
-gulp.task('nunjucks', function() {
+gulp.task('nunjucks', ['clean'], function() {
   // Gets .html and .nunjucks files in pages
   return gulp.src('src/templates/root/**/*.html')
   // Renders template with nunjucks
@@ -82,4 +92,6 @@ gulp.task('nunjucks', function() {
   .pipe(gulp.dest('dist'))
 });
 
-gulp.task('default', ['nunjucks', 'copy-images', 'files', 'js', 'sass', 'connect', 'watch']);
+gulp.task('default', ['clean', 'nunjucks', 'copy-images', 'files', 'js', 'sass', 'connect', 'watch']);
+
+gulp.task('prod', ['clean', 'nunjucks', 'copy-images', 'files', 'js', 'sass-prod']);
