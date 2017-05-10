@@ -52,3 +52,9 @@
         vertical-align: top;
     }
 }
+
+.c-portfolio_body-sq-col {
+    @include breakpoint(sm) {
+        width: 50%;
+    }
+}

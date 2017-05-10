@@ -1,18 +1,6 @@
 .c-skills-list {
-    list-style: none;
-    line-height: 1em;
 
     li {
-        font-size: 18px;
-        &:before {
-            content: "";
-            line-height: 1em;
-            width: 10px;
-            height: 10px;
-            background-color: $brand-light-grey;
-            float: left;
-            margin: 10px 0 0 -20px;
-            border-radius: 50%;
-        }
+        margin-bottom: 5px;
     }
 }

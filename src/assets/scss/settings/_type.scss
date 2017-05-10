@@ -1,8 +1,10 @@
 *, html, body {
     font-family: 'Pavanam', sans-serif !important;
+    font-size: 16px;
+    line-height: 2.0em;
 }
 
-h1, h2, h3, h4, p, ul, li {
+h1, h3, h4, p, ul, li {
     color: $brand-light-grey;
 }
 
@@ -18,28 +20,30 @@ a {
 }
 
 h1 {
-    font-size:2.5em;
-    margin:0;
+    font-size:2.5rem;
+    margin:0 0 $base-spacing-unit 0;
 }
 
 h2 {
-    font-size:2em;
+    font-size:2rem;
     margin:0;
     color: $brand-white;
+    margin-bottom: $base-spacing-unit--tiny;
 }
 
 h3 {
-    font-size: 1.75em;
+    font-size: 1.75rem;
+    margin-bottom: $base-spacing-unit--teeny;
 }
 
 h4 {
-    font-size: 1.5em;
+    font-size: 1.5rem;
 }
 
 p {
     font-family:sans-serif;
-    font-size:1.1em;
-    line-height: 1.5em;
+    font-size:1.1rem;
+    margin-bottom: $base-spacing-unit--teeny;
 
 }
 
