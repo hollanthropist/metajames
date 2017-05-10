@@ -1,3 +1,10 @@
+.c-navbar_logo,
+.c-navbar_nav {
+    @include breakpoint (lg) {
+        width: 50%;
+    }
+}
+
 .c-navbar {
     display: inline-block;
     margin-bottom: 20px;
@@ -17,6 +24,11 @@
         margin-top: 0;
         font-size: 2.5em;
         line-height: 1em;
+        color: $brand-white
+    }
+
+    span {
+        color: $brand-light-grey;
     }
 
     a {

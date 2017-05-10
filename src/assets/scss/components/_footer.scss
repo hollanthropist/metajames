@@ -2,33 +2,44 @@
     padding-top: 20px;
     color: $brand-light-grey;
     text-align: left;
-
-    .right {
-        p {
-            text-align: left;
-            @include breakpoint (md) {
-                text-align: right;
-            }
-        }
-
-    }
 }
 
 .c-footer_list {
-    display: block;
-    padding: 0 0 10px 0;
-    list-style: none;
-    margin-left: 0;
-    @include breakpoint(md) {
-        display: inline-block;
-    }
-
-    li {
-        padding-bottom: 10px;
+    div{
+        display: block;
+        padding: 0 0 10px 0;
+        list-style: none;
+        margin-left: 0;
         @include breakpoint(md) {
             display: inline-block;
-            padding: 0 20px 0 0;
         }
 
+        li {
+            padding-bottom: 10px;
+            @include breakpoint(md) {
+                display: inline-block;
+                padding: 0 20px 0 0;
+            }
+
+        }
+    }
+
+}
+
+.c-footer_list-contact {
+    ul {
+        margin: 0;
+        list-style: none;
+    }
+    @include breakpoint(md) {
+        width: 66%;
+    }
+}
+
+.c-footer_list-copyright {
+    @include breakpoint(md) {
+        width: 33%;
+        text-align: right;
+        float: right;
     }
 }
