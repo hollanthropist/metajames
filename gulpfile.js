@@ -86,4 +86,4 @@ gulp.task('nunjucks', function() {
 
 gulp.task('default', ['nunjucks', 'copy-images', 'files', 'sass', 'connect', 'watch']);
 
-gulp.task('prod', ['clean', 'nunjucks', 'copy-images', 'files', 'sass-prod']);
+gulp.task('prod', ['nunjucks', 'copy-images', 'files', 'sass-prod']);
